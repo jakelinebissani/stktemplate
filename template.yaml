@@ -1,9 +1,60 @@
 name: stktemplate
-description: test
+description: teste template de observabilidade
 types:
   - app-template
 inputs:
-  - label: Project name
+  - label: Alert name
     type: text
-    name: project_name
-    default: project-name
+    name: alert_name
+    default: alert_name
+    global: true
+  - label: Alert resume
+    type: text
+    name: alert_resume
+    default: Alert XXXX application
+    global: true
+  - label: Alert expression
+    type: text
+    name: alert_expr
+    default: sum(sli:ms_volume_path_status:rate5m{app=~"app-name", status=~"XXX"})
+    global: true
+  - label: Alert time
+    type: text
+    name: alert_time
+    default: 3m
+    global: true
+  - label: Severity
+    type: text
+    name: alert_severity
+    default: minor
+    global: true
+  - label: Squad
+    type: text
+    name: alert_squad
+    default: squad XPTO
+    global: true
+  - label: Jornada
+    type: text
+    name: alert_jornada
+    default: jornada XPTO
+    global: true
+  - label: Instruction
+    type: text
+    name: alert_instruction
+    default: KB000xxx
+    global: true
+  - label: Deployment
+    type: text
+    name: alert_deployment
+    default: deployment XPTO
+    global: true
+  - label: Alert summary
+    type: text
+    name: alert_summary
+    default: Alert HTTP5XX application
+    global: true
+  - label: Alert description
+    type: text
+    name: alert_description
+    default: Alert HTTP5XX application
+    global: true

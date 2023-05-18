@@ -1,0 +1,17 @@
+serverFiles:
+  alerting_rules.yml:
+    groups:
+      - name: {{ alert_name }}
+        rules:
+         - alert: {{ alert_resume }}
+            expr: {{ alert_expr }}
+            for: {{ alert_time }}
+            labels:
+              severity: {{ alert_severity }}
+              squad:  {{ alert_squad }}
+              jornada: {{ alert_jornada }}
+              instruction: {{ alert_instruction }}
+              deployment: {{ alert_deployment }}
+            annotations:
+              summary: {{ alert_summary }}
+              description: {{ alert_description }}
